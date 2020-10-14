@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+}
+
+.grid-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.grid {
+  box-shadow: 10px;
+  color: black;
+  height: 500px;
+  width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid div {
+  border: 1px solid black;
+  height: 10%;
+  width: 10%;
+}
