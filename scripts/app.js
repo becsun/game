@@ -30,8 +30,12 @@ function init(){
     //random bug popping up.
     setInterval(() => {
       bugOnePosition = Math.floor(Math.random() * numberOfCells)
-      cells[bugOnePosition].classList.add('bugOne')
+      const bugs = ['bugOne','bugTwo','bugFour','bugSix','bugSeven','bugEight','bugNine','bugTen','bugEleven','bugTwelve']
+      const differentBugs = bugs[Math.floor(Math.random() * bugs.length)]
+      cells[bugOnePosition].classList.add(differentBugs)
+      console.log(differentBugs)
     }, 1000)
+    
   }
   startButton.addEventListener('click', startGame)
 }
