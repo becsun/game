@@ -9,7 +9,10 @@ function init(){
   const cells = []
   const width = 10
   const numberOfCells = width * width
-  let bugOnePosition = 0
+  let chosenBugs = differentBugs()
+  let bugPosition = 0
+  console.log(chosenBugs)
+  const bugs = ['bugOne','bugTwo','bugFour','bugSix','bugSeven','bugEight','bugNine','bugTen','bugEleven','bugTwelve']
 
   //change home page to game page
   function gamePage(){
@@ -18,6 +21,29 @@ function init(){
     blurb.remove()
     title.remove()
   }
+
+  console.log(bugs[1])
+  console.log(bugs)
+ 
+
+  function differentBugs() {
+    const bugs = ['bugOne','bugTwo','bugFour','bugSix','bugSeven','bugEight','bugNine','bugTen','bugEleven','bugTwelve']
+    return bugs[Math.floor(Math.random() * bugs.length)]   
+  } 
+
+  function handleClick(e){
+    if (e.target.classList.contains(chosenBugs)) {
+      console.log(chosenBugs)
+      e.target.classList.remove(chosenBugs)
+    } 
+    for (let i = 0; i < bugs.length; i++) {
+      if (e.target.classList.contains(bugs[i])) {
+        console.log(bugs[i])
+        e.target.classList.remove(bugs[i])
+      } 
+    }
+  }
+
   function startGame() {
     gamePage()  
 
@@ -29,14 +55,15 @@ function init(){
 
     //random bug popping up.
     setInterval(() => {
-      bugOnePosition = Math.floor(Math.random() * numberOfCells)
-      const bugs = ['bugOne','bugTwo','bugFour','bugSix','bugSeven','bugEight','bugNine','bugTen','bugEleven','bugTwelve']
-      const differentBugs = bugs[Math.floor(Math.random() * bugs.length)]
-      cells[bugOnePosition].classList.add(differentBugs)
-      console.log(differentBugs)
+      bugPosition = Math.floor(Math.random() * numberOfCells) 
+      chosenBugs = differentBugs()
+      cells[bugPosition].classList.add(chosenBugs)
+      // console.log(differentBugs) 
     }, 1000)
-    
+
+
   }
   startButton.addEventListener('click', startGame)
+  grid.addEventListener('click', handleClick)
 }
-window.addEventListener('DOMContentLoaded', init)
+window.addEventListener('DOMContentLoaded', init )
