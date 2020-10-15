@@ -9,6 +9,7 @@ function init(){
   const cells = []
   const width = 10
   const numberOfCells = width * width
+  let bugOnePosition = 0
 
   //change home page to game page
   function gamePage(){
@@ -17,17 +18,21 @@ function init(){
     blurb.remove()
     title.remove()
   }
-  function startGame () {
+  function startGame() {
     gamePage()  
 
     for (let i = 0; i < numberOfCells; i++ ){
       const cell = document.createElement('div')
       cells.push(cell)
       grid.appendChild(cell)
-      console.log() 
     } 
-  }
 
+    //random bug popping up.
+    setInterval(() => {
+      bugOnePosition = Math.floor(Math.random() * numberOfCells)
+      cells[bugOnePosition].classList.add('bugOne')
+    }, 1000)
+  }
   startButton.addEventListener('click', startGame)
 }
 window.addEventListener('DOMContentLoaded', init)

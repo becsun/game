@@ -27,3 +27,64 @@ body {
   height: 10%;
   width: 10%;
 }
+
+.bugOne {
+  background-image: url('https://res.cloudinary.com/do68wjft3/image/upload/v1602756672/fly1_k71zbd.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.bugTwo {
+  background-image: url('https://res.cloudinary.com/do68wjft3/image/upload/c_scale,h_255,w_255/v1602756673/bug_12_fqgegm.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.bugThree {
+  background-image: url('https://res.cloudinary.com/do68wjft3/image/upload/c_scale,h_255,w_255/v1602756673/bug11_t39i66.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.bugFour {
+  background-image: url('https://res.cloudinary.com/do68wjft3/image/upload/c_scale,h_255,w_255/v1602756673/bug7_a9bzgz.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.bugFive {
+  background-image: url('https://res.cloudinary.com/do68wjft3/image/upload/c_scale,h_255,w_255/v1602756673/bug10_bfcwhu.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.bugSix {
+  background-image: url('https://res.cloudinary.com/do68wjft3/image/upload/c_scale,w_255/v1602756673/bug_13_gfdpuw.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.bugSeven {
+  background-image: url('https://res.cloudinary.com/do68wjft3/image/upload/c_scale,h_255,w_255/v1602756673/bug9_xmircf.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.bugEight {
+  background-image: url('https://res.cloudinary.com/do68wjft3/image/upload/c_scale,h_255,w_255/v1602756673/bug2_iep8ry.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.bugNine {
+  background-image: url('https://res.cloudinary.com/do68wjft3/image/upload/c_scale,w_255/v1602756673/bug6_dg01n8.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.bugTen {
+  background-image: url('https://res.cloudinary.com/do68wjft3/image/upload/c_scale,h_255,w_255/v1602756673/bug5_hm1vng.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.bugEleven {
+  background-image: url('https://res.cloudinary.com/do68wjft3/image/upload/c_scale,h_255,w_255/v1602756674/bug3_zaf3px.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.bugTwelve {
+  background-image: url('https://res.cloudinary.com/do68wjft3/image/upload/c_scale,h_255,w_255/v1602756674/bug2_ly8xoe.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
