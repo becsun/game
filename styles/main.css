@@ -28,6 +28,22 @@ body {
   width: 10%;
 }
 
+.grid-2 {
+  box-shadow: 10px;
+  color: black;
+  height: 500px;
+  width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid-2 p {
+  border: 1px solid black;
+  height: 10%;
+  width: 10%;
+}
+
+
 .bugOne {
   background-image: url('https://res.cloudinary.com/do68wjft3/image/upload/v1602756672/fly1_k71zbd.jpg');
   background-repeat: no-repeat;
