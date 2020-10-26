@@ -12,12 +12,12 @@ function init(){
   const width = 10
   const numberOfCells = width * width
   const buggieCells = width / 2
-  let chosenBugs = differentBugs()
+  let chosenBugs = null
   let bugPosition = 0
-  const targetBugPosition = 0
-  console.log(chosenBugs)
+  // console.log(chosenBugs)
+  
   const bugs = ['bugOne','bugTwo','bugFour','bugSix','bugSeven','bugEight','bugNine','bugTen','bugEleven','bugTwelve']
-
+  const randomBug = null
   //change home page to game page
   function gamePage(){
     startButton.remove()
@@ -36,26 +36,36 @@ function init(){
   } 
   
   function handleClick(e){
-    if (e.target.classList.contains(chosenBugs)) {
-      console.log(chosenBugs)
-      e.target.classList.remove(chosenBugs)
-    } 
+    
+    bugCells.filter(bug => e.target.classList.contains(bug))
 
-    for (let i = 0; i < bugs.length; i++) {
-      if (e.target.classList.contains(bugs[i])) {
-        console.log(bugs[i])
-        e.target.classList.remove(bugs[i])
-      } 
-    }
+    
 
+
+    console.log(bugCells[bugPosition])
+    console.log(bugCells)
+    console.log(cells[bugPosition])
+    console.log(chosenBugs)
+    console.log(bugs)
+    
   }
+  //   console.log(randomBug)
+
+  //   for (let i = 0; i < bugs.length; i++) {
+  //     if (e.target.classList.contains(cells[bugPosition]) === bugCells[randomBug]) {
+        
+  //       e.target.classList.remove(cells[bugPosition])
+  //     } 
+  //     console.log(cells[bugPosition])
+  //   }
+  // }
+
   function randomBugsToKill(){
     for (let i = 0; i < buggieCells; i++ ){
       const randomBug = bugs[Math.floor(Math.random() * bugs.length)]  
       bugCells[i].classList.add(randomBug)
-      
     }
-    console.log(bugCells)
+    console.log(randomBug)
   }
   function startGame() {
     gamePage()  
@@ -81,6 +91,9 @@ function init(){
       chosenBugs = differentBugs()
       cells[bugPosition].classList.add(chosenBugs)
       // console.log(differentBugs) 
+      // if (cells[bugPosition].classList.contains(chosenBugs)){
+      //   return
+      // }
     }, 1000)
 
     randomBugsToKill()
