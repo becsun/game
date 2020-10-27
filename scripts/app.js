@@ -54,7 +54,7 @@ function init() {
   } 
 
   function populateRandomFiveBugs() {
-    for (let i = 0; i < buggieCells; i++) {
+    for (let i = 0; i < numberOfBugCells; i++) {
       const randomBug = bugs[Math.floor(Math.random() * bugs.length)]
       bugGridCells[i].classList.add(randomBug)
     }
