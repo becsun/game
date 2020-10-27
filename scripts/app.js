@@ -7,17 +7,14 @@ function init() {
   const title = document.querySelector('.title')
   const bugGrid = document.querySelector('.grid-2')
 
-  const cells = []
-  const bugCells = []
+  const gameGridCells = []
+  const bugGridCells = []
   const width = 10
-  const numberOfCells = width * width
-  const buggieCells = width / 2
-  let chosenBugs = null
-  let bugPosition = 0
-  // console.log(chosenBugs)
+  const numberOfCellsForTheGameGrid = width * width
+  const numberOfBugCells = width / 2
 
   const bugs = ['bugOne', 'bugTwo', 'bugFour', 'bugSix', 'bugSeven', 'bugEight', 'bugNine', 'bugTen', 'bugEleven', 'bugTwelve']
-  const randomBug = null
+
   //change home page to game page
   function gamePage() {
     startButton.remove()
@@ -26,11 +23,7 @@ function init() {
     title.remove()
   }
 
-  console.log(bugs[1])
-  console.log(bugs)
-
-
-  function differentBugs() {
+  function addIndividualBugToTheGrid() {
     const bugs = ['bugOne', 'bugTwo', 'bugFour', 'bugSix', 'bugSeven', 'bugEight', 'bugNine', 'bugTen', 'bugEleven', 'bugTwelve']
     return bugs[Math.floor(Math.random() * bugs.length)]
   }
@@ -42,53 +35,57 @@ function init() {
       const bug = e.target.classList[0]
 
       // Iterate over the bugGrid cells to see if the bug we clicked on matches
-      for (let i = 0; i <= bugCells.length; i++) {
+      for (let i = 0; i <= bugGridCells.length; i++) {
         // If the bugGrid cell isn't empty and matches the bug, we can remove the bug from both places
-        if ((bugCells[i] != null) && (bugCells[i].classList[0] === bug)) {
+        if ((bugGridCells[i].classList[0] !== null) && (bugGridCells[i].classList[0] === bug)) {
           // Remove bug from bug grid
-          bugCells[i].className = ''
-
+          bugGridCells[i].className = ''
           // Remove bug from main grid
           e.target.className = ''
         }
+        const allBugCellsEmpty = bugGridCells.every((bugCell) => {
+          return bugCell.className === '' 
+        })
+        if (allBugCellsEmpty){
+          populateRandomFiveBugs()
+        }
       }
     }
-  }
+  } 
 
-  function randomBugsToKill() {
+  function populateRandomFiveBugs() {
     for (let i = 0; i < buggieCells; i++) {
       const randomBug = bugs[Math.floor(Math.random() * bugs.length)]
-      bugCells[i].classList.add(randomBug)
+      bugGridCells[i].classList.add(randomBug)
     }
-    console.log(randomBug)
   }
+  
   function startGame() {
     gamePage()
 
-    for (let i = 0; i < numberOfCells; i++) {
+    for (let i = 0; i < numberOfCellsForTheGameGrid; i++) {
       const cell = document.createElement('div')
-      cells.push(cell)
+      gameGridCells.push(cell)
       grid.appendChild(cell)
     }
 
-    for (let i = 0; i < buggieCells; i++) {
+    for (let i = 0; i < numberOfBugCells; i++) {
       const bugCell = document.createElement('p')
-      bugCells.push(bugCell)
+      bugGridCells.push(bugCell)
       bugGrid.appendChild(bugCell)
     }
 
     //random bug popping up.
     setInterval(() => {
-      bugPosition = Math.floor(Math.random() * numberOfCells)
-      chosenBugs = differentBugs()
-      cells[bugPosition].classList.add(chosenBugs)
-      // console.log(differentBugs) 
-      // if (cells[bugPosition].classList.contains(chosenBugs)){
-      //   return
-      // }
+      //make a new array for only empty cells.
+      const emptyCells = gameGridCells.filter(cell => {
+        return cell.className === ''
+      })
+      const randomEmptyCell = emptyCells[Math.floor(Math.random() * emptyCells.length)] 
+      randomEmptyCell.classList.add(addIndividualBugToTheGrid())
     }, 1000)
 
-    randomBugsToKill()
+    populateRandomFiveBugs()
 
   }
   startButton.addEventListener('click', startGame)
