@@ -21,6 +21,9 @@ body {
   width: 500px;
   display: flex;
   flex-wrap: wrap;
+  /* background-image: url("https://res.cloudinary.com/do68wjft3/image/upload/c_scale,h_500,w_500/v1604682246/cloud_hmvofs.jpg"); */
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .grid div {
@@ -37,6 +40,11 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
+.grid-2-container{
+  display: flex;
+  margin-top: 15%;
+  justify-content: center;
+}
 
 .grid-2 p {
   border: 1px solid black;
@@ -44,14 +52,30 @@ body {
   width: 10%;
 }
 
+.start-container{
+  display: flex;
+  position: absolute;
+  margin-top: -80%;
+}
+.restart-container{
+  display: flex;
+  position: absolute;
+  margin-top: -70%;
+}
+.game-over{
+  display: flex;
+  position: absolute;
+  margin-top: -70%;
+  font-size: 100px;
+}
 
 .bugOne {
-  background-image: url('https://res.cloudinary.com/do68wjft3/image/upload/v1602756672/fly1_k71zbd.jpg');
+  background-image: url('https://res.cloudinary.com/do68wjft3/image/upload/c_scale,h_255,w_255/v1604682912/bug1_xijrfs.png');
   background-repeat: no-repeat;
   background-size: contain;
 }
 .bugTwo {
-  background-image: url('https://res.cloudinary.com/do68wjft3/image/upload/c_scale,h_255,w_255/v1602756673/bug_12_fqgegm.png');
+  background-image: url('https://res.cloudinary.com/do68wjft3/image/upload/c_scale,h_255,w_255/v1604681060/bug11_ziuga4.png');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -61,7 +85,7 @@ body {
   background-size: contain;
 }
 .bugFour {
-  background-image: url('https://res.cloudinary.com/do68wjft3/image/upload/c_scale,h_255,w_255/v1602756673/bug7_a9bzgz.png');
+  background-image: url('https://res.cloudinary.com/do68wjft3/image/upload/c_scale,h_250,w_250/v1604684957/ant-portable-network-graphics-vector-graphics-clip-art-insect-png-favpng-YA9smHRVPPv3iBgk075A4HyCG_qcvus2.jpg');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -91,17 +115,17 @@ body {
   background-size: contain;
 }
 .bugTen {
-  background-image: url('https://res.cloudinary.com/do68wjft3/image/upload/c_scale,h_255,w_255/v1602756673/bug5_hm1vng.jpg');
+  background-image: url('https://res.cloudinary.com/do68wjft3/image/upload/c_scale,h_255,w_300/v1604682605/bug10_qsjrk1.png');
   background-repeat: no-repeat;
   background-size: contain;
 }
 .bugEleven {
-  background-image: url('https://res.cloudinary.com/do68wjft3/image/upload/c_scale,h_255,w_255/v1602756674/bug3_zaf3px.jpg');
+  background-image: url('https://res.cloudinary.com/do68wjft3/image/upload/c_scale,h_1000,w_1000/v1604684525/bug11_ttken8.jpg');
   background-repeat: no-repeat;
   background-size: contain;
 }
 .bugTwelve {
-  background-image: url('https://res.cloudinary.com/do68wjft3/image/upload/c_scale,h_255,w_255/v1602756674/bug2_ly8xoe.jpg');
+  background-image: url('https://res.cloudinary.com/do68wjft3/image/upload/c_scale,h_255,w_255/v1604681071/bug12_x4fzxw.jpg');
   background-repeat: no-repeat;
   background-size: contain;
 }
