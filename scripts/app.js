@@ -7,13 +7,17 @@ function init() {
   const title = document.querySelector('.title')
   const bugGrid = document.querySelector('.grid-2')
   const gameOver = document.querySelector('.game-over')
-  const removeGrid = document.querySelector('grid-wrapper')
+  const removeGrid = document.querySelector('.grid-wrapper')
+  const score = document.querySelector('.score')
+  
 
+  
   const gameGridCells = []
   const bugGridCells = []
   const width = 10
   const numberOfCellsForTheGameGrid = width * width
   const numberOfBugCells = width / 2
+  let startScore = 100
 
   grid.style.backgroundImage = 'none'
   gameOver.style.display = 'none'
@@ -21,8 +25,7 @@ function init() {
   
 
   function freshPageForNewGame(){
-    location.reload()
-    startGame()
+    window.location.reload()
   }
   //change home page to game page
   function gamePage() {
@@ -55,6 +58,8 @@ function init() {
           bugGridCells[i].className = ''
           // Remove bug from main grid
           e.target.className = ''
+          score.innerHTML = startScore
+          startScore += 1000
         }
         const allBugCellsEmpty = bugGridCells.every((bugCell) => {
           return bugCell.className === '' 
@@ -103,7 +108,7 @@ function init() {
       randomEmptyCell.classList.add(addIndividualBugToTheGrid())
       console.log(emptyCells.length)
   
-    }, 100)
+    }, 200)
 
     populateRandomFiveBugs()
 
