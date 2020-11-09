@@ -7,39 +7,38 @@
   <title>Get all the bugs</title>
   <script src="scripts/app.js"></script>
   <link rel="stylesheet" href="styles/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <header>
     <h1 class="title">Get all the Bugs!!!</h1>
   </header>
-
   <div class='container'>
-    <div>Score:<span class="score"></span></div>
+    <div class="scoreText">Score:<span class="score"></span></div>
     <div class="container-2">
       <h2>Aim of the game</h2>
-      <p>Try and get all the bugs before they invade</p>
+      <p class="instructions">Try and get all the bugs before they invade</p>
     </div>
   </div>
-
-  <div class="grid-wrapper">
-    <div class="grid">
+  <div class="grid-flex">
+    <div class="grid-wrapper">
+      <div class="grid">
+      </div>
     </div>
-
   </div>
   <div class="grid-2-container">
     <p class="grid-2"></p>
   </div>
-  <div class="game-over">Game Over</div>
-
+  <div class="game-box">
+    <div class="game-over">Game Over</div>
+  </div>
   <div class="start-container">
     <button class="start">Attack</button>
   </div>
   <div class="restart-container">
     <button class="restart">Try Again</button>
   </div>
-
-
 </body>
 
 </html>

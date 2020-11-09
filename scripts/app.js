@@ -7,20 +7,27 @@ function init() {
   const title = document.querySelector('.title')
   const bugGrid = document.querySelector('.grid-2')
   const gameOver = document.querySelector('.game-over')
-  const removeGrid = document.querySelector('.grid-wrapper')
+  // const removeGrid = document.querySelector('.grid-wrapper')
   const score = document.querySelector('.score')
-  
-
+  const removeBackgroundImage = document.querySelector('body')
+  const scoreText = document.querySelector('.scoreText')
+  const removePaddingForStartButton = document.querySelector('.grid-flex')
   
   const gameGridCells = []
   const bugGridCells = []
   const width = 10
   const numberOfCellsForTheGameGrid = width * width
   const numberOfBugCells = width / 2
-  let startScore = 100
-
+  let startScore = 1000
+  
+  //hide certain elements from the homepage
   grid.style.backgroundImage = 'none'
+  removeBackgroundImage.style.backgroundColor = '#d48019'
   gameOver.style.display = 'none'
+  scoreText.style.display = 'none'
+  restartButton.style.display = 'none'
+  removePaddingForStartButton.style.position = 'absolute'
+
   const bugs = ['bugOne', 'bugTwo', 'bugFour', 'bugSix', 'bugSeven', 'bugEight', 'bugNine', 'bugTen', 'bugEleven', 'bugTwelve']
   
 
@@ -34,6 +41,9 @@ function init() {
     blurb.remove()
     title.remove()
     grid.style.backgroundImage = 'url("https://res.cloudinary.com/do68wjft3/image/upload/c_scale,h_500,w_500/v1604682246/cloud_hmvofs.jpg")'
+    removeBackgroundImage.style.backgroundImage = 'none'
+    scoreText.style.display = 'initial'
+    removePaddingForStartButton.style.position = 'relative'
   }
 
 
@@ -102,13 +112,14 @@ function init() {
       if (emptyCells.length === 0) {
         restartButton.style.display = 'initial'
         gameOver.style.display = 'initial'
+        
         clearInterval(timerForAddingBugsToTheBugGrid)      
       
       } 
       randomEmptyCell.classList.add(addIndividualBugToTheGrid())
       console.log(emptyCells.length)
   
-    }, 200)
+    }, 300)
 
     populateRandomFiveBugs()
 
